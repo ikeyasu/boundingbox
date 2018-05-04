@@ -1,0 +1,10 @@
+output-xhtml: yes
+add-xml-decl: no
+doctype: strict
+char-encoding: utf8
+indent: auto
+wrap: 100
+indent-attributes: no
+repeated-attributes: keep-last
+error-file: tidy-errors.txt
+vertical-space: yes

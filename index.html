@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Apple macOS version 5.6.0" />
+  <!-- tidy -config tidyconfig.txt -m index.html -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1.0" />
+  <title>Bounding box</title><!-- CSS  -->
+  <link href=
+  "https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel=
+  "stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href=
+  "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo" name="logo-container">Bounding box</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">About</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">About</a>
+        </li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class=
+      "material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h3>スーパーボールを囲って下さい</h3>
+      
+      <button data-target="modal_howto" class="btn modal-trigger">操作方法</button>
+      <button data-target="modal_smartphone" class="btn modal-trigger">スマートフォンでのスクロール方法</button>
+
+      <div class="row center">
+      <p>以下のように囲ってください</p>
+      <img alt="sample" style="width:140px; height: 140px;" src="images/sample.png" />
+      </div>
+      <div id="bbox_annotator0" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator1" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator2" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator3" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator4" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator5" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator6" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator7" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator8" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator9" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator10" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator11" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator12" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator13" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator14" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator15" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator16" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator17" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator18" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator19" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator20" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator21" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator22" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator23" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator24" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator25" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator26" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator27" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator28" style="display:inline-block">
+        &nbsp;
+      </div>
+
+      <div id="bbox_annotator29" style="display:inline-block">
+        &nbsp;
+      </div>
+    </div>
+  </div>
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br />
+      <a id="submitButton" class="btn-large waves-effect waves-light orange" name=
+      "submitButton">結果をコピーする</a> <!--
+      <a id="reset_button" class=
+      "btn-large waves-effect waves-light orange" name="reset_button">Reset</a>
+      -->
+      <br />
+      <input id="annotation_data" name="annotation_data" type="text" placeholder=
+      "Annotation data" />
+    </div>
+  </div>
+  <!-- Modal Structure -->
+  <div id="modal_howto" class="modal">
+    <div class="modal-content">
+      <h4>操作の方法</h4>
+      <p>スーパーボールを全て囲ってください。全ての画像を囲ったら、コピーして、クラウドソーシングサイトに戻り、その結果を貼り付けて提出してください。</p>
+      <img alt="how to use" src="images/howto.gif" />
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+  <div id="modal_smartphone" class="modal">
+    <div class="modal-content">
+      <h5>スクロールについて</h5>
+      <p>スマートフォンをお使いの方は、画像の上では二本指でスクロールしてください。</p>
+      <img alt="swipe to scroll" src="images/twofinger_swipe.gif" />
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+  <div id="modal_done" class="modal">
+    <div class="modal-content">
+      <h5>作業結果をコピーしました。クラウドソーシングサイトに戻って、コピーした結果を貼り付けて提出してください。</h5>
+      <p></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+
+  <script src=
+  "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> 
+  <script src="index.js"></script> 
+  <script src="urls.js"></script> 
+  <script type="text/javascript">
+  (function($) {
+  var annotation_data = {};
+  function update_annotation_data(url, entries) {
+    annotation_data[url] = entries;
+    $("#annotation_data").val(JSON.stringify(annotation_data));
+  }
+  function create_annotator(id, url) {
+    // Initialize the bounding-box annotator.
+    var annotator = new BBoxAnnotator({
+      id: id,
+      url: url,
+      input_method: 'fixed', // Can be one of ['text', 'select', 'fixed']
+      labels: ['ball'], // list of labels
+      onchange: function(entries) {
+        update_annotation_data(url, entries)
+      }
+    });
+  }
+
+  $(document).bind({"copy": function() {
+    $('#modal_done').modal("open");
+  }});
+  $("#submitButton").click(copy);
+  function copy() {
+    var $elem = $("#annotation_data");
+    try {
+      $elem.selectionStart = 0;
+      $elem.selectionEnd = $elem.value.length + 1;
+      //add atribute allowing normal selecting post focus
+    } catch (err) {
+      $elem.select();
+      //add atribute allowing normal selecting post focus
+    }
+    if (!document.execCommand('copy')) {
+      $("#submitButton").after("<div class='white-text text-darken-2 pink lighten-1'>以下のテキストボックスのテキストを全て選択してコピーしてください</div>");
+      $("#submitButton").hide();
+    }
+  }
+  $("#annotation_data").click(function() {
+    copy();
+  });
+  // init modal dialogs
+  $('.modal').modal();
+  if ("ontouchstart" in window) {
+    $('#modal_smartphone').modal("open");
+  }
+  $('#modal_howto').modal("open");
+
+  window.args = new Object;
+  var pair=location.search.substring(1).split('&');
+  for(var i=0;pair[i];i++) {
+    var kv = pair[i].split('=');
+    window.args[kv[0]]=kv[1];
+  }
+  var target_url = urls;
+  if (window.args.end > 0) {
+    target_url = urls.slice(window.args.begin, window.args.end);
+  }
+  $(target_url).each(function(i, url) {
+    create_annotator("#bbox_annotator" + i, url);
+  });
+
+  })(jQuery);
+  </script>
+</body>
+</html>
