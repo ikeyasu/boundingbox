@@ -21,12 +21,16 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo" name="logo-container">Bounding box</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">About</a>
+        <li><a href="#" class="modal-trigger" data-target="modal_load">Load</a>
+        </li>
+        <li><a href="#" class="modal-trigger" data-target="modal_about">About</a>
         </li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">About</a>
+        <li><a href="#" class="modal-trigger" data-target="modal_load">Load</a>
+        </li>
+        <li><a href="#" class="modal-trigger" data-target="modal_about">About</a>
         </li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class=
@@ -210,6 +214,23 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
     </div>
   </div>
+  <div id="modal_about" class="modal">
+    <div class="modal-content">
+      <p>Bounong box: https://github.com/ikeyasu/boundingbox</p>
+      <p>Copyright: ikeyasu</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+  <div id="modal_load" class="modal">
+    <div class="modal-content">
+      <textarea id="load-json"></textarea>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" id="modal-load-json-ok" class="modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
 
   <script src=
   "https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> 
@@ -222,9 +243,24 @@
     annotation_data[url] = entries;
     $("#annotation_data").val(JSON.stringify(annotation_data));
   }
+  function load_annotation_data(data) {
+    annotation_data = data;
+    $.each(annotation_data, function(url, v) {
+      console.log(url);
+      $(v).each(function(i, e) {
+        if (typeof e !== "object") return;
+        //if (annotators[url] === undefined) return;
+        url = encodeURI(url);
+        annotators[url].add_entry(e);
+      });
+    });
+  }
+  $("#modal-load-json-ok").click(function() {
+    load_annotation_data(JSON.parse($("#load-json").val().trim()));
+  });
   function create_annotator(id, url) {
     // Initialize the bounding-box annotator.
-    var annotator = new BBoxAnnotator({
+    return new BBoxAnnotator({
       id: id,
       url: url,
       input_method: 'fixed', // Can be one of ['text', 'select', 'fixed']
@@ -271,12 +307,17 @@
     window.args[kv[0]]=kv[1];
   }
   var target_url = urls;
-  if (window.args.end > 0) {
-    target_url = urls.slice(window.args.begin, window.args.end);
+  if (parseInt(window.args.end) != NaN && parseInt(window.args.begin) != NaN &&
+      parseInt(window.args.end) > 0) {
+    target_url = urls.slice(parseInt(window.args.begin), parseInt(window.args.end) + 1);
   }
+  var annotators = {};
   $(target_url).each(function(i, url) {
-    create_annotator("#bbox_annotator" + i, url);
+    var annotator = create_annotator("#bbox_annotator" + i, url);
+    annotators[url] = annotator;
   });
+
+  $('.sidenav').sidenav();
 
   })(jQuery);
   </script>
